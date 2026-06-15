@@ -1,3 +1,10 @@
+mod board;
+mod cell;
+mod game;
+mod input;
+mod render;
+
 fn main() {
-    println!("Hello, world!");
+    let mut game = game::Game::new();
+    game.start();
 }
