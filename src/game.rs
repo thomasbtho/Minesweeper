@@ -76,11 +76,14 @@ impl Game {
     }
 
     fn check_game_state(&mut self) {
+        if self.state == GameState::QUIT {
+            return;
+        }
         self.state = self.board.check_game_state();
     }
 
     fn end_game(&mut self) {
-        let height = self.board.height() + 5;
+        let height = self.board.height() + 4;
         clear_before_render(height);
         if self.state == GameState::WON {
             render(&self.board);
@@ -88,7 +91,11 @@ impl Game {
         } else {
             self.board.reveal_all_cells();
             render(&self.board);
-            println!("You lost!");
+            let msg = match self.state {
+                GameState::LOST => "You lost!",
+                _ => "Goodbye!",
+            };
+            println!("{}", msg);
         }
     }
 }
