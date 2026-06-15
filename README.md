@@ -1,4 +1,4 @@
-# 🏴‍☠️ Command-Line Minesweeper
+# 🏴‍☠️ Minesweeper
 
 A classic **Minesweeper** game playable directly in the **command line**, built in **Rust**.
 
@@ -32,7 +32,7 @@ cargo run
 
 ## 🎮 How to Play
 
-1️⃣ Enter **three values**: `x y action` to play or to exit: `quit` or `exit`
+1️⃣ Enter **three values**: `x y action` to play, or type `quit` or `exit` to exit.
 
 - `x` and `y` are the **coordinates** (starting from 1).
 - `action` can be:
